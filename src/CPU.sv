@@ -40,65 +40,65 @@ output logic [`DATA_WIDTH-1:0]       DM_DI;//*
 //        LOGIC & VARIABLES DECLARATION                            
 //---------------------------------------------------------------------
 // << Program_Counter >>
-logic        [`PC_WIDTH-1:0]    PC_Present;//*
-logic        [`PC_WIDTH-1:0]       PC_next;//*
+logic        [`PC_WIDTH-1:0]    PC_Present;
+logic        [`PC_WIDTH-1:0]       PC_next;
 
 // << about instruction >>
-logic        [`DATA_WIDTH-1:0] instruction;//*
-logic        [6:0]                  funct7;//*
-logic        [4:0]                rs2_addr;//*
-logic        [4:0]                rs1_addr;//*
-logic        [2:0]                  funct3;//*
-logic        [4:0]                 rd_addr;//*
-logic        [4:0]                  opcode;//*
+logic        [`DATA_WIDTH-1:0] instruction;
+logic        [6:0]                  funct7;
+logic        [4:0]                rs2_addr;
+logic        [4:0]                rs1_addr;
+logic        [2:0]                  funct3;
+logic        [4:0]                 rd_addr;
+logic        [4:0]                  opcode;
 
 // << Controller >>
-logic                             RegWrite;//*
-logic                               rs2Sel;//*
-logic        [1:0]                 rdPCSel;//*
-logic        [3:0]                MemWrite;//*
-logic        [1:0]                MemtoReg;//*
-logic                              MemRead;//*
-logic                               Branch;//*
-logic                                  Jal;//*
-logic                                 Jalr;//*
-logic        [1:0]                   ALUop;//*
+logic                             RegWrite;
+logic                               rs2Sel;
+logic        [1:0]                 rdPCSel;
+logic        [3:0]                MemWrite;
+logic        [1:0]                MemtoReg;
+logic                              MemRead;
+logic                               Branch;
+logic                                  Jal;
+logic                                 Jalr;
+logic        [1:0]                   ALUop;
 
 // << ALU & ALU Controller >>
-logic        [`DATA_WIDTH-1:0]     ALUsrcA;//*
-logic        [`DATA_WIDTH-1:0]     ALUsrcB;//*
-logic        [`DATA_WIDTH-1:0]   ALUresult;//*
-logic        [2:0]                 ALUctrl;//*
-logic                              ALUSign;//*
+logic        [`DATA_WIDTH-1:0]     ALUsrcA;
+logic        [`DATA_WIDTH-1:0]     ALUsrcB;
+logic        [`DATA_WIDTH-1:0]   ALUresult;
+logic        [2:0]                 ALUctrl;
+logic                              ALUSign;
 
 // << CSR >>
-logic        [`DATA_WIDTH-1:0]     CSR_OUT;//*
+logic        [`DATA_WIDTH-1:0]     CSR_OUT;
 
 // << Register_File >>
-logic        [`DATA_WIDTH-1:0]     rd_data;//*
-logic        [`DATA_WIDTH-1:0]    rs1_data;//*
-logic        [`DATA_WIDTH-1:0]    rs2_data;//*
+logic        [`DATA_WIDTH-1:0]     rd_data;
+logic        [`DATA_WIDTH-1:0]    rs1_data;
+logic        [`DATA_WIDTH-1:0]    rs2_data;
 
 // << Imm_Gen >>
-logic        [`DATA_WIDTH-1:0]     imm_out;//*
+logic        [`DATA_WIDTH-1:0]     imm_out;
 
 // << for branch >>
-logic        [`DATA_WIDTH-1:0]    PC_plus4;//*
-logic        [`DATA_WIDTH-1:0]  PC_plusImm;//*
-logic        [`DATA_WIDTH-1:0]  PC4orPCimm;//*
-logic        [`DATA_WIDTH-1:0]  immPlusRs1;//*
+logic        [`DATA_WIDTH-1:0]    PC_plus4;
+logic        [`DATA_WIDTH-1:0]  PC_plusImm;
+logic        [`DATA_WIDTH-1:0]  PC4orPCimm;
+logic        [`DATA_WIDTH-1:0]  immPlusRs1;
 
 // << Comparator >>
-logic                          branch_flag;//*
+logic                          branch_flag;
 
 // << rdPC target >>
-logic        [`DATA_WIDTH-1:0]        rdPC;//*
+logic        [`DATA_WIDTH-1:0]        rdPC;
 
 // << LoadData_Mask >>
-logic        [`DATA_WIDTH-1:0]    LoadData;//*
+logic        [`DATA_WIDTH-1:0]    LoadData;
 
 // << MUX selection >>
-logic        [1:0]                  CSRSel;//*
+logic        [1:0]                  CSRSel;
 
 
 //---------------------------------------------------------------------
@@ -115,7 +115,7 @@ assign rs2_addr    = instruction[`rs2_RANGE   ];
 assign rs1_addr    = instruction[`rs1_RANGE   ];
 assign funct3      = instruction[`funct3_RANGE];
 assign rd_addr     = instruction[`rd_RANGE    ];
-assign opcode      = instruction[`OP_RANGE	  ];
+assign opcode      = instruction[`OP_RANGE    ];
 
 // << for MUX selection >>
 assign CSRSel   = {instruction[21], instruction[27]};
@@ -270,3 +270,4 @@ alignment_Correction alignment_Correction(
 
 
 endmodule
+
