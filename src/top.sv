@@ -2,7 +2,7 @@
 `include "define.svh"
 `include "../SRAM/SRAM_wrapper.sv"
 `include "../SRAM/SRAM_rtl.sv"
-//`include "./SRAM/SRAM_wrapper.sv"
+
 module top(
   clk,
   rst
