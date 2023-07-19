@@ -8,21 +8,21 @@ module Comparator(
 //---------------------------------------------------------------------
 //        PORTS DECLARATION                             
 //---------------------------------------------------------------------
-input  logic [`DATA_WIDTH-1:0] rs1_data_i;
-input  logic [`DATA_WIDTH-1:0] rs2_data_i;
-input  logic [2:0]               funct3_i;
-output logic                branch_flag_o;
+input  logic signed [`DATA_WIDTH-1:0] rs1_data_i;
+input  logic signed [`DATA_WIDTH-1:0] rs2_data_i;
+input  logic        [2:0]               funct3_i;
+output logic                       branch_flag_o;
 
 //---------------------------------------------------------------------
 //        LOGIC & VARIABLES DECLARATION                            
 //---------------------------------------------------------------------
-logic signed [`DATA_WIDTH-1:0] rs1_data_signed;
-logic signed [`DATA_WIDTH-1:0] rs2_data_signed;
+logic [`DATA_WIDTH-1:0] rs1_data_unsigned;
+logic [`DATA_WIDTH-1:0] rs2_data_unsigned;
 //---------------------------------------------------------------------
 //        WIRE CONNECTION                             
 //---------------------------------------------------------------------
-assign rs1_data_signed = rs1_data_i;
-assign rs2_data_signed = rs2_data_i;
+assign rs1_data_unsigned = rs1_data_i;
+assign rs2_data_unsigned = rs2_data_i;
 //---------------------------------------------------------------------
 //        ALWAYS BLOCK                             
 //---------------------------------------------------------------------
@@ -35,16 +35,16 @@ always_comb begin
       branch_flag_o = rs1_data_i != rs2_data_i;
     end
     3'd4:begin //BLT
-      branch_flag_o = rs1_data_signed < rs2_data_signed;
-    end
-    3'd5:begin //BGE
-      branch_flag_o = rs1_data_signed >= rs2_data_signed;
-    end
-    3'd6:begin //BLTU
       branch_flag_o = rs1_data_i < rs2_data_i;
     end
-    3'd7:begin //BGEU
+    3'd5:begin //BGE
       branch_flag_o = rs1_data_i >= rs2_data_i;
+    end
+    3'd6:begin //BLTU
+      branch_flag_o = rs1_data_unsigned < rs2_data_unsigned;
+    end
+    3'd7:begin //BGEU
+      branch_flag_o = rs1_data_unsigned >= rs2_data_unsigned;
     end
     default:branch_flag_o = 1'b0;
   endcase
