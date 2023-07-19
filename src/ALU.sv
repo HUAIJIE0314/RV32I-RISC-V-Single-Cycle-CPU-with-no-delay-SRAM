@@ -20,8 +20,8 @@ output logic signed [`DATA_WIDTH-1:0] ALUresult_o;
 //---------------------------------------------------------------------
 //        LOGIC & VARIABLES DECLARATION                            
 //---------------------------------------------------------------------
-wire [`DATA_WIDTH-1:0] srcA_unsigned;
-wire [`DATA_WIDTH-1:0] srcB_unsigned;
+logic [`DATA_WIDTH-1:0] srcA_unsigned;
+logic [`DATA_WIDTH-1:0] srcB_unsigned;
 //---------------------------------------------------------------------
 //        WIRE CONNECTION                             
 //---------------------------------------------------------------------
