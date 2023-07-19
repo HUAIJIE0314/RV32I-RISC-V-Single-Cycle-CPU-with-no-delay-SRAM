@@ -26,15 +26,15 @@ module CPU(
 //---------------------------------------------------------------------
 //        PORTS DECLARATION                             
 //---------------------------------------------------------------------
-input  logic                           clk;//*  
-input  logic                           rst;//*
-output logic [$clog2(`IM_DEPTH)-1:0]  IM_A;//*
-input  logic [`DATA_WIDTH-1:0]       IM_DO;//*
-output logic                         DM_OE;//*
-output logic [$clog2(`DM_DEPTH)-1:0]  DM_A;//*
-input  logic [`DATA_WIDTH-1:0]       DM_DO;//*
-output logic [3:0]                  DM_WEB;//*
-output logic [`DATA_WIDTH-1:0]       DM_DI;//*
+input  logic                           clk;  
+input  logic                           rst;
+output logic [$clog2(`IM_DEPTH)-1:0]  IM_A;
+input  logic [`DATA_WIDTH-1:0]       IM_DO;
+output logic                         DM_OE;
+output logic [$clog2(`DM_DEPTH)-1:0]  DM_A;
+input  logic [`DATA_WIDTH-1:0]       DM_DO;
+output logic [3:0]                  DM_WEB;
+output logic [`DATA_WIDTH-1:0]       DM_DI;
 
 //---------------------------------------------------------------------
 //        LOGIC & VARIABLES DECLARATION                            
