@@ -23,9 +23,9 @@
 
 // << opcode >>
 // << R-type >>
-`define RTYPE	5'b01100 // 11
+`define RTYPE 5'b01100 // 11
 // << I-type >>
-`define ITYPE	5'b00100 // 11
+`define ITYPE 5'b00100 // 11
 `define JALR  5'b11001 // 11
 `define LOAD  5'b00000 // 11
 // << S-type >>
@@ -33,10 +33,10 @@
 // << B-type >>
 `define BTYPE	5'b11000 // 11
 // << U-type >>
-`define AUIPC	5'b00101 // 11
+`define AUIPC 5'b00101 // 11
 `define LUI   5'b01101 // 11
 // << J-type >> // JAL
-`define JTYPE	5'b11011 // 11
+`define JTYPE 5'b11011 // 11
 // << CSR >>
 `define CSR   5'b11100 // 11
 
@@ -51,5 +51,7 @@
 `define SRL_SRA   3'd5 // rd = rs1u >> rs2[4:0] / rd = rs1s >> rs2[4:0]
 `define OR        3'd6 // rd = rs1 | rs2
 `define AND       3'd7 // rd = rs1 & rs2
+
+
 
 `endif
