@@ -1,8 +1,6 @@
 `timescale 1ns/1ps
 `define CYCLE 10.0 // Cycle time
 `define MAX 500000 // Max cycle number
-
-//`include "./syn/top.svo"
 `include "./src/top.sv"
 
 `define mem_word(addr) \
