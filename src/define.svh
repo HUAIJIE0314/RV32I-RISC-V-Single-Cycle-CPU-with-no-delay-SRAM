@@ -4,7 +4,7 @@
 //---------------------------------------------------------------------
 //        Bit Width             
 //---------------------------------------------------------------------
-`define DATA_WIDTH	  32
+`define DATA_WIDTH    32
 `define REG_DEPTH     32
 `define PC_WIDTH      32
 `define DM_DEPTH      16384
@@ -40,10 +40,6 @@
 // << CSR >>
 `define CSR   5'b11100 // 11
 
-
-//`define NOP		32'h0000_0000
-//`define SYSCALL	32'hffff_ffff
-
 //---------------------------------------------------------------------
 //        ALU Operations             
 //---------------------------------------------------------------------
@@ -56,27 +52,4 @@
 `define OR        3'd6 // rd = rs1 | rs2
 `define AND       3'd7 // rd = rs1 & rs2
 
-
-
 `endif
-
-
-/*
-// << R-type >>
-`define RTYPE	7'b0110011
-// << I-type >>
-`define ITYPE	7'b0010011
-`define JALR	7'b1100111
-`define LOAD 	7'b00000 11
-// << S-type >>
-`define STYPE	7'b0100011
-// << B-type >>
-`define BTYPE	7'b1100011
-// << U-type >>
-`define AUIPC	7'b0010111
-`define LUI		7'b0110111
-// << J-type >> // JAL
-`define JTYPE	7'b1101111
-// << CSR >>
-`define CSR		7'b1110011
-*/
