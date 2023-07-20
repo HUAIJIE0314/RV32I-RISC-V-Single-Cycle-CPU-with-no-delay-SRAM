@@ -140,7 +140,7 @@ Program_Counter PC(
 // << Register_File >>
 Register_File RF(
   .clk_i     (clk     ),
-  .rst       (rst     ),
+  .rst_i     (rst     ),
   .rs1_addr_i(rs1_addr),
   .rs2_addr_i(rs2_addr),
   .rd_addr_i (rd_addr ),

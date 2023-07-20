@@ -1,6 +1,6 @@
 module Register_File(
   clk_i,
-  rst,
+  rst_i,
   rs1_addr_i,
   rs2_addr_i,
   rd_addr_i,
@@ -13,7 +13,7 @@ module Register_File(
 //        PORTS DECLARATION                             
 //---------------------------------------------------------------------
 input  logic                               clk_i;
-input  logic                                 rst;
+input  logic                               rst_i;
 input  logic [$clog2(`REG_DEPTH)-1:0] rs1_addr_i;
 input  logic [$clog2(`REG_DEPTH)-1:0] rs2_addr_i;
 input  logic [$clog2(`REG_DEPTH)-1:0]  rd_addr_i;
@@ -34,8 +34,8 @@ assign rs2_data_o = Register[rs2_addr_i];
 //---------------------------------------------------------------------
 //        ALWAYS BLOCK                             
 //---------------------------------------------------------------------
-always_ff@(posedge clk_i or posedge rst)begin
-  if(rst)begin
+always_ff@(posedge clk_i or posedge rst_i)begin
+  if(rst_i)begin
     for(i=0;i<`REG_DEPTH;i=i+1)Register[i] <= {`DATA_WIDTH{1'b0}};
   end
   else begin
