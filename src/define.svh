@@ -18,8 +18,8 @@
 `define rs1_RANGE    19:15
 `define funct3_RANGE 14:12
 `define rd_RANGE     11:7
-`define OP_RANGE	   6:0
-`define OP_WIDTH	   7
+`define OP_RANGE     6:0
+`define OP_WIDTH     7
 
 // << opcode >>
 // << R-type >>
