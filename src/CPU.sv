@@ -50,7 +50,7 @@ logic        [4:0]                rs2_addr;
 logic        [4:0]                rs1_addr;
 logic        [2:0]                  funct3;
 logic        [4:0]                 rd_addr;
-logic        [4:0]                  opcode;
+logic        [`OP_WIDTH-1:0]        opcode;
 
 // << Controller >>
 logic                             RegWrite;

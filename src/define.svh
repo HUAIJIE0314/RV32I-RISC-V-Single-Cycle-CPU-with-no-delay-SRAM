@@ -18,27 +18,31 @@
 `define rs1_RANGE    19:15
 `define funct3_RANGE 14:12
 `define rd_RANGE     11:7
-`define OP_RANGE	   6:2
-`define OP_WIDTH	   5
+`define OP_RANGE	   6:0
+`define OP_WIDTH	   7
 
 // << opcode >>
 // << R-type >>
-`define RTYPE 5'b01100 // 11
+`define RTYPE 7'b0110011
 // << I-type >>
-`define ITYPE 5'b00100 // 11
-`define JALR  5'b11001 // 11
-`define LOAD  5'b00000 // 11
+`define ITYPE 7'b0010011
+`define JALR  7'b1100111
+`define LOAD  7'b0000011
 // << S-type >>
-`define STYPE	5'b01000 // 11
+`define STYPE	7'b0100011
 // << B-type >>
-`define BTYPE	5'b11000 // 11
+`define BTYPE	7'b1100011
 // << U-type >>
-`define AUIPC 5'b00101 // 11
-`define LUI   5'b01101 // 11
+`define AUIPC 7'b0010111
+`define LUI   7'b0110111
 // << J-type >> // JAL
-`define JTYPE 5'b11011 // 11
+`define JTYPE 7'b1101111
 // << CSR >>
-`define CSR   5'b11100 // 11
+`define CSR   7'b1110011
+
+
+//`define NOP		32'h0000_0000
+//`define SYSCALL	32'hffff_ffff
 
 //---------------------------------------------------------------------
 //        ALU Operations             
