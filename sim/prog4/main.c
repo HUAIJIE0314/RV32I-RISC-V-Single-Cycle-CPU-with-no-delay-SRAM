@@ -19,7 +19,7 @@ int main(void){
 	asm("li t2, 32768");
 	asm("rdinstreth t0");
 	asm("rdinstret  t1");
-    asm("sw	t0,4(t2)");
+        asm("sw	t0,4(t2)");
 	asm("sw	t1,8(t2)");
 	
 	asm("rdcycleh   t0");
