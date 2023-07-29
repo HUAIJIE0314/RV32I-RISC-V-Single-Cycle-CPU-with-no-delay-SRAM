@@ -119,7 +119,6 @@ assign opcode      = instruction[`OP_RANGE    ];
 
 // << for MUX selection >>
 assign CSRSel   = {instruction[21], instruction[27]};
-assign LoadSel  = funct3;     // 2:LW, 0:LB, 1:LH, 4:LHU, 5:LBU
 
 // << branch target >>
 assign PC_plus4       = PC_Present + 4;//PC_Present
